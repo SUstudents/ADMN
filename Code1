@@ -1,0 +1,80 @@
+Some Simple of Our Code: 
+
+--- retrive image of customer from the database
+
+Establish connection with server .
+$connection = mysql_connect("localhost", "root", "");
+
+Selects database.
+$db = mysql_select_db("customers", $connection);
+
+Executes MySQL select query.
+$query = mysql_query("select * from customers", $connection);
+
+Display fetched data
+<span>Image:</span> <?php echo $row1['customers_image']; ?>
+
+Closing connection with server.
+mysql_close($connection);
+
+
+==============================
+
+The follwing code is for the AI algorithms:
+
+#import libraries
+import cv2
+import numpy as np
+
+import numpy as np
+import cv2
+from sklearn import svm
+
+ImageList.append[Image]
+Label.append[true]
+
+clf = svm.LinearSVC()
+clf.fit(ImageList, Label)
+
+
+def preprosses(img):    
+    pic = cv2.imread(img)
+    readyimg = cv2.resize(img, (150,150))
+    gray_image = cv2.cvtColor(readyimg, cv2.COLOR_BGR2GRAY)
+    return gray_image.flatten()
+
+
+#import classifier for face detection
+face_classifier = cv2.CascadeClassifier(‘Haarcascades/haarcascade_frontalface_default.xml’)
+# Import Classifier for Body Detection
+body_classifier = cv2.CascadeClassifier (‘Haarcascades/haarcascade_upperbody.xml’)
+
+cap = cv2.VideoCapture(0)
+while True:
+    # Capture frame-by-frame
+    ret, frame = cap.read()
+
+	body = body_classifier.detectMultiScale (gray, 1.3, 5)
+
+	if body is():
+		moveCloser(body, gray ) 
+
+		if moveCloser() == CloseDist:
+			faces = face_classifier.detectMultiScale (gray, 1.3, 5)
+			If faces is ():
+				return img
+
+    			for (x,y,w,h) in faces:
+        			cv2.rectangle(gray,(x,y),(x+w,y+h),(50),2)
+        			roi_gray = gray[y:y+h, x:x+w]
+        			p = cv2.resize(gray, (200,200))
+        			pr = str(clf.predict([p.flatten()])).strip('[]')
+        			pr = pr.strip("''")
+			If pr > 0.90 
+				A = "True"
+			else
+				A = False
+
+			DropShippment(A)
+
+
